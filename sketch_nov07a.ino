@@ -8,7 +8,7 @@
 //And also to identify which value belongs to which output.
 
 
-//String to recieve Bluetooth Data 
+//String to receive Bluetooth Data 
 String s;
 
 //An integer to clear buffer after every 100 loops so that
@@ -43,14 +43,14 @@ void loop() {
   if(n==100){Serial.flush();n=0;}
   n++;
 
-  //Recieve the string via bluetooth  
+  //Receive the string via bluetooth  
   while(Serial.available()){
     char c = Serial.read();
     if(c=='!') break;
     else s+=c; 
   }
 
-  //Check for length of string reieved(=15)
+  //Check for length of string received(=15)
   if(s!="" && s.length()==15){
 
     //Map the value received (Range: 150-250) to 1000-2000
